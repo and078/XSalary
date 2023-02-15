@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XSalary.MainPage">
+
+    <Grid BackgroundColor="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Frame  Grid.Row="0"  BackgroundColor="Black" BorderColor="WhiteSmoke" CornerRadius="5" Margin="5">
+            <Label FontFamily="Arial" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center" TextColor="WhiteSmoke">Калькулятор ЗП</Label>
+        </Frame>
+
+        <Frame Grid.Row="1" BackgroundColor="Black" BorderColor="WhiteSmoke" CornerRadius="5" Margin="5">
+            <Grid  BackgroundColor="Black">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" VerticalOptions="Center" FontSize="Micro" TextColor="WhiteSmoke">Количество смен:</Label>
+                <Entry x:Name="days" Grid.Column="1" VerticalOptions="Center" Keyboard="Numeric" FontSize="Micro" TextColor="WhiteSmoke"></Entry>
+            </Grid>
+        </Frame>
+
+        <Frame Grid.Row="2" BackgroundColor="Black" BorderColor="WhiteSmoke" CornerRadius="5" Margin="5">
+            <Grid  BackgroundColor="Black">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" VerticalOptions="Center" FontSize="Micro" TextColor="WhiteSmoke">Стоимость смены(лей):</Label>
+                <Entry x:Name="dayCoast" Grid.Column="1" VerticalOptions="Center" Keyboard="Numeric" Text="995" FontSize="Micro" TextColor="WhiteSmoke"></Entry>
+            </Grid>
+        </Frame>
+
+
+
+
+        <Frame Grid.Row="3" BorderColor="WhiteSmoke" BackgroundColor="Black" CornerRadius="5" Margin="5">
+            <Grid  BackgroundColor="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.1*"/>
+                    <RowDefinition Height="0.4*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.ColumnSpan="2" FontSize="Micro" HorizontalOptions="Center" TextColor="WhiteSmoke">Премии</Label>
+                <Label Grid.Row="1" Grid.Column="0" FontSize="Micro" HorizontalOptions="Start" TextColor="WhiteSmoke">За экзамен</Label>
+                <Label Grid.Row="1" Grid.Column="1" FontSize="Micro" HorizontalOptions="End" TextColor="WhiteSmoke">За задержки</Label>
+
+                <RadioButton x:Name="examFine" Content="Штраф (-3000 р)" FontSize="Micro"  Grid.Row="2" TextColor="WhiteSmoke"/>
+                <RadioButton x:Name="examZero" Content="Без премии (0 р)" FontSize="Micro" Grid.Row="3" TextColor="WhiteSmoke"/>
+                <RadioButton x:Name="examHalf" Content="Половина премии (3000 р)" FontSize="Micro" Grid.Row="4" TextColor="WhiteSmoke"/>
+                <RadioButton x:Name="examFull" Content="Полная премия (6000 р)" FontSize="Micro" Grid.Row="5" TextColor="WhiteSmoke" IsChecked="true" />
+
+                <Switch Grid.Column="1" Grid.Row="3" IsToggled="true" HorizontalOptions="End" x:Name="delays"/>
+
+                <Label Grid.Row="6" Grid.Column="0" VerticalOptions="Center" FontSize="Micro" TextColor="WhiteSmoke">Прочие премии (руб):</Label>
+                <Entry x:Name="otherBonuses" Grid.Row="6" Grid.Column="1" VerticalOptions="Center" FontSize="Micro" Keyboard="Numeric" TextColor="WhiteSmoke"></Entry>
+  
+            </Grid>
+
+        </Frame>
+        
+        <Frame Grid.Row="4" BorderColor="WhiteSmoke" BackgroundColor="Black" CornerRadius="5" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Label VerticalOptions="Center" FontSize="Micro" TextColor="WhiteSmoke">Штрафы (руб):</Label>
+                <Entry x:Name="fines" VerticalOptions="Center" Grid.Column="1" FontSize="Micro" Keyboard="Numeric" TextColor="WhiteSmoke"></Entry>
+            </Grid>
+        </Frame>
+        
+        <Frame Grid.Row="5" BorderColor="WhiteSmoke" BackgroundColor="Black" CornerRadius="5" Margin="5">
+            <Button x:Name="calculateBtn" BackgroundColor="Black" CornerRadius="5" BorderColor="WhiteSmoke" TextColor="WhiteSmoke" Text="Посчитать"></Button>
+        </Frame>
+    </Grid>
+
+</ContentPage>
